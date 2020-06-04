@@ -1,1 +1,12 @@
-<p>movies works!</p>
+<ul>
+  <li *ngFor="let m of movies">
+    <div class="movie-container">
+
+      <img src="{{m.ImageUrl}}"/>
+      <div class="movie-description">
+        {{ m.Name}} ({{ m.Year}})
+        <button type="button">{{ m.Price }} kr</button>
+      </div>
+    </div>
+  </li>
+</ul>

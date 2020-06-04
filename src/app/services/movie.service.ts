@@ -15,13 +15,15 @@ export class MovieService {
   getMovies() {
     this.http.get('https://medieinstitutet-wie-products.azurewebsites.net/api/products')
     .subscribe((data: any) => {
-      console.log(data.products);
+      console.log(data);
 
-      const moviesFromApi: Movie[] = data.products.map(movie => {
+      const moviesFromApi: Movie[] = data.map(movie => {
         const movieObject = new Movie();
         movieObject.Name = movie.name;
         movieObject.ImageUrl = movie.imageUrl;
         movieObject.Year = movie.year;
+        movieObject.Price = movie.price;
+        movieObject.Id = movie.id;
         return movieObject;
       });
 
@@ -29,4 +31,18 @@ export class MovieService {
 
     });
   }
+
+  getMovie(id: string){
+
+  }
+
+  saveMovie(movie: Movie){
+
+  }
+
+  updateMovie(movie: Movie){
+
+  }
+
+
 }
