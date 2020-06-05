@@ -1,12 +1,35 @@
 <div class="main-container">
+
+  <span class="message-span">
+    <a routerLink="movies">
+      Hi there! Feel like watching a movie?
+    </a>
+  </span>
+
+  <span *ngFor="let m of movies">
+    <img src="{{m.ImageUrl}}"/>
+  </span>
+  <span *ngFor="let m of movies">
+    <img src="{{m.ImageUrl}}"/>
+  </span>
+  <span *ngFor="let m of movies">
+    <img src="{{m.ImageUrl}}"/>
+  </span>
+  <span *ngFor="let m of movies">
+    <img src="{{m.ImageUrl}}"/>
+  </span>
+</div>
+
+
+
+
+<!-- <div class="main-container">
   <h1>
     <div class="link-container">
       <a routerLink="movies" routerLinkActive="active">
         HI! FEEL LIKE WATCHING A MOVIE?
       </a>
     </div>
-
   </h1>
-
-</div>
+</div> -->
 

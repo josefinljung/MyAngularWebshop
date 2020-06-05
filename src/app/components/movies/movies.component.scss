@@ -12,7 +12,7 @@ ul {
 
     .movie-container:hover {
       transform: scale(1.2);
-      color: lightseagreen;
+      color: rgb(28, 143, 137);
     }
 
     .movie-container {
@@ -20,19 +20,23 @@ ul {
       text-align: center;
       padding: 10px;
       position: relative;
-      font-size: 0.9rem;
+      font-size: 1.2vw;
       transition: all .3s ease-in-out;
 
       img {
       width: 70%;
+      box-shadow: 5px 5px 25px rgb(74, 109, 107);
+      border-radius: 2px;
       }
 
       button {
         background-color: lightcoral;
         border: none;
         border-radius: 2px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.384);
         padding: 10px;
         font-weight: 600;
+        font-size: 0.8rem;
         position: absolute;
         top: 10%;
         left: 70%;
@@ -41,7 +45,7 @@ ul {
       }
 
       button:hover {
-        background-color: rgb(130, 202, 187);
+        background-color: lightseagreen;
       }
     }
   }

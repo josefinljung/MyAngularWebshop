@@ -1,25 +1,60 @@
 .main-container {
-  min-height: 100vh;
+  text-align: center;
   position: relative;
 
-  background-image: url(https://cdn.pixabay.com/photo/2016/03/23/17/33/curtain-1275200_1280.png);
-
-  .link-container {
+  .message-span {
+    width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    text-align: center;
-  }
+    font-size: 5vw;
+    z-index: 200;
 
-  a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    transition: all .5s ease-in-out;
+    a{
+      text-decoration: none;
+      color: rgb(15, 97, 93);
+    }
 
   }
-  a:hover {
-    color: rgb(0, 0, 0);
+  span {
+    img {
+    width: 3.7%;
+    filter: opacity(15%);
+    }
   }
 }
+
+
+
+
+
+
+// .main-container {
+//   min-height: 100vh;
+//   position: relative;
+
+//   background-image: url(https://cdn.pixabay.com/photo/2016/03/23/17/33/curtain-1275200_1280.png);
+//   background-size: cover;
+//   filter: opacity(80%);
+
+//   .link-container {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     -ms-transform: translate(-50%, -50%);
+//     text-align: center;
+//   }
+
+//   a {
+//     text-decoration: none;
+//     color: rgb(255, 255, 255);
+//     transition: all .9s ease-in-out;
+
+//   }
+//   a:hover {
+//     color: rgb(0, 0, 0);
+//   }
+// }

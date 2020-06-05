@@ -6,6 +6,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { DetailsComponent } from './components/details/details.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'cart', component: CartComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'admin', component: AdminComponent},
+  {path: 'products/:id', component: DetailsComponent},
   {path: '**', component: NotfoundComponent}
 ];
 

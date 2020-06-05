@@ -1,22 +1,23 @@
 header {
-  background-color: lightseagreen;
-  padding: 5px;
   margin-bottom: 30px;
 }
 
 nav {
+
   ul {
     list-style: none;
     display: flex;
-    justify-content: space-evenly;
-    font-size: 1.3rem;
+    justify-content: flex-end;
+    font-size: 3vw;
+    padding-left: 0px;
 
     a {
       text-decoration: none;
-      letter-spacing: 2px;
-      color: rgb(255, 255, 255);
-      font-weight: 600;
-      transition: all .5s ease-in-out;
+      text-transform: lowercase;
+      letter-spacing: 6px;
+      color: lightseagreen;
+      transition: all .3s ease-in-out;
+      margin-right: 20px;
     }
 
     a:hover {
@@ -25,7 +26,7 @@ nav {
 
     a.active {
       text-decoration: underline;
-      color: rgb(225, 247, 244);
+      color: rgb(17, 116, 111);
     }
   }
 }
