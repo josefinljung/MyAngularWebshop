@@ -2,20 +2,22 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import Movie from '../models/Movie';
 import { Subject } from 'rxjs';
+import { IMovie } from './IMovie';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MovieService {
+export class MovieService implements IMovie {
 
   movies = new Subject<Movie[]>();
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+    ) { }
 
   getMovies() {
     this.http.get('https://medieinstitutet-wie-products.azurewebsites.net/api/products')
     .subscribe((data: any) => {
-      console.log(data);
 
       const moviesFromApi: Movie[] = data.map(movie => {
         const movieObject = new Movie();
@@ -31,18 +33,5 @@ export class MovieService {
 
     });
   }
-
-  getMovie(id: string){
-
-  }
-
-  saveMovie(movie: Movie){
-
-  }
-
-  updateMovie(movie: Movie){
-
-  }
-
 
 }

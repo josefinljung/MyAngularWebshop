@@ -3,5 +3,5 @@ export default class Movie {
   ImageUrl: string;
   Year: string;
   Price: string;
-  Id: string;
+  Id: number;
 }

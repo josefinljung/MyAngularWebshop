@@ -4,8 +4,11 @@
 
       <img src="{{m.ImageUrl}}"/>
       <div class="movie-description">
-        {{ m.Name}} ({{ m.Year}})
-        <button type="button">{{ m.Price }} kr</button>
+        <a class="" routerLink="/products/{{m.Id}}">
+           {{ m.Name}}
+        </a>
+        ({{ m.Year}})
+        <button type="button"(click)="addToCart(m)">{{ m.Price }} kr</button>
       </div>
     </div>
   </li>
