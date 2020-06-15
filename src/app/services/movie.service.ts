@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import Movie from '../models/Movie';
+import { Movie } from '../models/Movie';
 import { Subject } from 'rxjs';
 import { IMovie } from './IMovie';
 
@@ -26,8 +26,10 @@ export class MovieService implements IMovie {
         movieObject.Year = movie.year;
         movieObject.Price = movie.price;
         movieObject.Id = movie.id;
+        movieObject.Description = movie.description;
         return movieObject;
       });
+
 
       this.movies.next(moviesFromApi);
 

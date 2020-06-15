@@ -3,10 +3,8 @@
     <div class="movie-container">
 
       <img src="{{m.ImageUrl}}"/>
-      <div class="movie-description">
-        <a class="" routerLink="/products/{{m.Id}}">
-           {{ m.Name}}
-        </a>
+      <div class="movie-info">
+        {{ m.Name}}
         ({{ m.Year}})
         <button type="button"(click)="addToCart(m)">{{ m.Price }} kr</button>
       </div>

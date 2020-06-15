@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
+import { Movie } from 'src/app/models/Movie';
+import { Cart } from 'src/app/models/Cart';
 
 @Component({
   selector: 'app-cart',
@@ -7,14 +9,33 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  addedToCartMovies;
+
+  showForm: boolean = false;
+  cartItems;
+  cartTotal;
 
   constructor(
-    private cartService: CartService,
-    ) { }
+    private cartService: CartService, ) { }
 
   ngOnInit(): void {
-    this.addedToCartMovies = this.cartService.getItems();
+
+    this.cartService.cartSource.subscribe((items: Cart[]) => {
+      this.cartItems = items;
+    });
+
+    this.cartItems = this.cartService.showItems();
+    this.cartTotal = this.cartService.totalPrice;
+  }
+
+  increase(item) {
+    this.cartItems = this.cartService.increaseCartItem(item);
+    this.cartTotal = this.cartService.totalPrice;
+  }
+
+  decrease(item) {
+    this.cartItems = this.cartService.decreaseItems(item);
+    console.log(item.quantity);
+    this.cartTotal = this.cartService.totalPrice;
   }
 
 }

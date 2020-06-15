@@ -1,3 +1,42 @@
-<div *ngFor="let addedMovie of addedToCartMovies">
-  {{ addedMovie.Name }}
+<div *ngIf="cartItems.length === 0">
+  <div class="error-message">
+    <h2>Go back and select a movie!</h2>
+  </div>
+</div>
+
+<div *ngIf="cartItems">
+  <div class="cart-container" *ngFor="let newItem of cartItems">
+        <div>
+          <img class="cart-img" src="{{ newItem.ImageUrl }}">
+        </div>
+        <div>
+          <span class="cart-info">
+          <h1>
+            {{ newItem.Name }}
+          </h1>
+          <h3>
+            {{newItem.quantity}} x
+            {{newItem.totalSum}}kr
+            <span class="edit-btn-container">
+              <button class="edit-btn" (click)="increase(newItem)">+</button>
+              <button class="edit-btn" (click)="decrease(newItem)">-</button>
+            </span>
+          </h3>
+        </span>
+          <span class="movie-description">
+            {{ newItem.Description }}
+          </span>
+        </div>
+    </div>
+
+  <div class="total-sum" *ngIf="cartItems.length">
+    Total: {{ cartTotal }} kr
+  </div>
+</div>
+
+<div *ngIf="cartItems.length >= 1">
+  <div>
+    <button class="checkout-btn" [disabled]="cartItems.length < 1" (click)="showForm = !showForm;">CHECKOUT</button>
+  </div>
+    <app-checkout *ngIf="showForm"></app-checkout>
 </div>

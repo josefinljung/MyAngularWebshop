@@ -12,6 +12,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { DetailsComponent } from './components/details/details.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DetailsComponent } from './components/details/details.component';
     CheckoutComponent,
     AdminComponent,
     NotfoundComponent,
-    DetailsComponent
+    DetailsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

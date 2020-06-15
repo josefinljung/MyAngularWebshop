@@ -1,0 +1,29 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10%;
+  background-color: lightseagreen;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 2.2vh;
+  letter-spacing: 0.4vh;
+  color: rgb(240, 239, 239);
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: rgb(131, 221, 217)
+  }
+
+  .left-footer {
+    text-align: start;
+  }
+
+  .right-footer {
+    text-align: end;
+  }
+}

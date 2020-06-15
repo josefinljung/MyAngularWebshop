@@ -1,7 +1,8 @@
-export default class Movie {
+export class Movie {
   Name: string;
   ImageUrl: string;
   Year: string;
-  Price: string;
+  Price: number;
   Id: number;
+  Description: string;
 }
