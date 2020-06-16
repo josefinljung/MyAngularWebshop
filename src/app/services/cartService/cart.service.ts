@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Movie } from '../models/Movie';
-import { Cart} from '../models/Cart';
+import { Movie } from '../../models/Movie';
+import { Cart } from '../../models/Cart';
 import ICart from './ICart';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CartService {
+export class CartService implements ICart {
 
   cartList: Cart[] = [];
   movieInCart: Cart;
@@ -64,6 +64,7 @@ export class CartService {
       calcPrice += cartItems.quantity * cartItems.Price;
     });
     this.totalPrice = calcPrice;
+    console.log(calcPrice);
   }
 
 }

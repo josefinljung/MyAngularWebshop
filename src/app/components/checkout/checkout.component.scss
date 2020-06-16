@@ -1,0 +1,36 @@
+form {
+  margin: 15% 10% 15% 10%;
+  text-align: left;
+  font-size: 1.4rem;
+  width: 100%;
+
+  label {
+    margin-right: 5px;
+  }
+
+  .f-name, .l-name, .email {
+    margin-bottom: 10px;
+
+    input {
+      display: block;
+      width: 80%;
+    }
+  }
+
+  .placeorder-btn-container {
+  text-align: center;
+
+    button {
+      margin-top: 5%;
+      background-color: lightseagreen;
+      border: none;
+      border-radius: 2px;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.384);
+      margin-left: 6px;
+      padding: 5px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: black;
+    }
+  }
+}

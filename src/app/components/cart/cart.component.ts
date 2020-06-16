@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from 'src/app/services/cart.service';
+import { CartService } from 'src/app/services/cartService/cart.service';
 import { Movie } from 'src/app/models/Movie';
 import { Cart } from 'src/app/models/Cart';
 
@@ -36,6 +36,7 @@ export class CartComponent implements OnInit {
     this.cartItems = this.cartService.decreaseItems(item);
     console.log(item.quantity);
     this.cartTotal = this.cartService.totalPrice;
+    console.log(this.cartService.totalPrice);
   }
 
 }

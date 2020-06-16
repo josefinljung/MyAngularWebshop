@@ -3,8 +3,10 @@ import { Cart } from '../models/Cart';
 export class Order {
   orderId?: number;
   companyId: number;
-  customer: string;
-  orderMade: Date;
+  createdBy: string;
+  created: Date;
+  paymentMethod: string;
   totalPrice: number;
+  status: number;
   products: Array<Cart>;
 }

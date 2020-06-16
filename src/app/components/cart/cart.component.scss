@@ -1,5 +1,24 @@
 .error-message {
-  margin-bottom: 100vh;
+  font-size: 1.9rem;
+  margin-top: 35vh;
+  margin-bottom: 60vh;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    border-radius: 10%;
+    padding: 5px;
+    letter-spacing: 2px;
+    color: rgb(17, 116, 111);
+    transition: all .3s ease-in-out;
+    margin-right: 20px;
+  }
+
+  a:hover {
+    color: rgb(131, 204, 200);
+    }
 }
 
 .cart-container {
@@ -25,7 +44,7 @@
       display: block;
 
       .edit-btn {
-        width: 20px;
+        width: 25px;
         background-color: lightcoral;
         border: none;
         border-radius: 2px;
@@ -39,23 +58,34 @@
   }
 
   .movie-description {
-    padding-right: 10%;
+    padding-right: 20%;
     display: block;
+    font-size: 1.8vw;
   }
 }
 
-.total-sum {
-  margin: 20px 20px 0px 0px;
+.test {
   text-align: right;
+
+.total-sum {
+  margin: 10% 10% 0% 0%;
+  font-size: 1rem;
 }
 
 .checkout-btn {
+  text-align: right;
   background-color: lightseagreen;
   border: none;
   border-radius: 2px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.384);
-  padding: 4px;
+  padding: 6px;
   font-weight: 600;
-  font-size: 0.9rem;
-  margin-right: 20px;
+  font-size: 1.2rem;
+  margin: 5% 10% 0% 0%;
+
+  .checkout-btn {
+    background-color: white;
+  }
+}
+
 }
