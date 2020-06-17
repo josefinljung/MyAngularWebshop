@@ -1,14 +1,14 @@
 <form  [formGroup]="orderForm" (ngSubmit)="placeOrder()">
   <div class="checkout-userInfo">
 
-    <div class="f-name">
-      <label>Firstname:</label>
-      <input type="text" formControlName="customerName"/>
+    <div class="name">
+      <label>Name:</label>
+      <input type="text" id="customerName" formControlName="customerName"/>
     </div>
-
-    <div class="l-name">
-      <label>Lastname:</label>
-      <input type="text" id="customerLastName" formControlName="customerLastName"/>
+    <div *ngIf="customerName.touched && !customerName.valid">
+      <div class="form-validation" *ngIf=" customerName.errors.required">
+        Name is required.
+      </div>
     </div>
 
     <div class="email">
@@ -16,48 +16,32 @@
       <input type="email" formControlName="customerEmail"/>
     </div>
 
-    <div class="validation-errors" *ngIf="customerEmail.touched && !customerEmail.valid">
-      <div *ngIf="customerEmail.errors.required">
-        Email is required
-      </div>
-      <div *ngIf="customerEmail.errors.email">
-        Email has to follow email format
+    <div *ngIf="customerEmail.touched && !customerEmail.valid">
+      <div class="form-validation" *ngIf="customerEmail.errors.required">
+        Email is required and must follow format: example@mail.com.
       </div>
     </div>
-    <div class="validation-errors" *ngIf="customerLastName.touched && !customerLastName.valid">
-      <div *ngIf="customerLastName.errors.required">
-        Lastname is required is required.
-      </div>
-      <div *ngIf="customerLastName.errors.minlength">
-        Lastname has to be 3 charcters long or more.
-      </div>
-    </div>
-    <div class="validation-errors" *ngIf="customerPayment.touched && !customerLastName.valid">
-      <div *ngIf="customerPayment.errors.required">
-        Pick a payment option.
-      </div>
-    </div>
-
-  </div>
+   </div>
 
 
   <div class="checkout-userPayment">
     <label>Payment method:</label>
     <div>
-      <input type="radio" formControlName="customerPayment" value="visa" />
-        Visa
+      <input type="radio" formControlName="customerPayment" value="Paypal" />
+        Paypal
     </div>
     <div>
-      <input type="radio" formControlName="customerPayment" value="mastercard" />
-        MasterCard
+      <input type="radio" formControlName="customerPayment" value="Bitcoin" />
+        Bitcoin
     </div>
     <div>
-      <input type="radio" formControlName="customerPayment" value="faktura" />
+      <input type="radio" formControlName="customerPayment" value="Swish" />
         Swish
     </div>
   </div>
 
+
   <div class="placeorder-btn-container">
-    <button type="submit" [disabled]="!orderForm.valid">PLACE ORDER</button>
+    <button class="place-order-btn" type="submit" [disabled]="!orderForm.valid">PLACE ORDER</button>
   </div>
 </form>

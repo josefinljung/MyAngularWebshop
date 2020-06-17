@@ -64,7 +64,6 @@ export class CartService implements ICart {
       calcPrice += cartItems.quantity * cartItems.Price;
     });
     this.totalPrice = calcPrice;
-    console.log(calcPrice);
   }
 
 }

@@ -23,7 +23,7 @@ export class AdminComponent implements OnInit {
   }
 
   deleteOrder(orderId: number) {
-    this.orderService.removeOrder(orderId).subscribe(()=> {
+    this.orderService.removeOrder(orderId).subscribe(() => {
       this.orderService.showOrders();
     });
 

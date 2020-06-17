@@ -1,8 +1,8 @@
-import { Component, OnInit, NgModuleRef } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Cart } from 'src/app/models/Cart';
 import { Order } from 'src/app/models/Order';
 import { OrderService } from 'src/app/services/orderService/order.service';
-import { Cart } from 'src/app/models/Cart';
 import { CartService } from 'src/app/services/cartService/cart.service';
 
 @Component({
@@ -16,8 +16,7 @@ export class CheckoutComponent implements OnInit {
   orderList: Order[] = [];
 
   orderForm = this.fb.group({
-    customerName: [''],
-    customerLastName: ['', [Validators.required, Validators.minLength(3)]],
+    customerName: ['', [Validators.required, Validators.minLength(3)]],
     customerEmail: ['', [Validators.required, Validators.email]],
     customerPayment: ['', Validators.required]
   });
@@ -36,14 +35,12 @@ export class CheckoutComponent implements OnInit {
   get customerEmail() {
     return this.orderForm.get('customerEmail') as FormControl;
   }
-  get customerLastName() {
-    return this.orderForm.get('customerLastName') as FormControl;
+  get customerName() {
+    return this.orderForm.get('customerName') as FormControl;
   }
   get customerPayment() {
     return this.orderForm.get('customerPayment') as FormControl;
   }
-
-
 
   placeOrder() {
 
@@ -59,11 +56,9 @@ export class CheckoutComponent implements OnInit {
       products: []
     };
 
-
     const detailsProducts = this.cartItems.map((movie) => {
-      return {productId: movie.movieId, amount: movie.quantity, orderId: 22 };
+      return {productId: movie.Id, name: movie.Name, amount: movie.quantity, orderId: 22 };
     });
-
 
     detailsProducts.forEach((orderedProduct) => {
       newOrder.products.push(orderedProduct);

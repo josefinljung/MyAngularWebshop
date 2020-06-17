@@ -1,18 +1,16 @@
 
 <div>
   <div>
-    <h3>These are the placed orders:</h3>
+    <h1>Orders</h1>
     <div>
-      <ul *ngFor="let order of orderList">
-        <div>
-          <p>Order Id: {{ order.orderId }}</p>
-          <p>Status: {{ order.status }}</p>
-          <p>Customer: {{ order.createdBy }}</p>
-          <p>Order placed: {{ order.created | date }}</p>
-
-          <button (click)="deleteOrder(order.orderId)">Delete order</button>
-        </div>
-      </ul>
+      <div class="order-container" *ngFor="let order of orderList">
+        <p class="order-date">{{ order.created | date: 'fullDate' }}</p>
+        <p>Order id: {{ order.orderId }}</p>
+        <p>Customer email: {{ order.createdBy }}</p>
+        <p>Order sum: {{ order.totalPrice }} kr, paid with {{ order.paymentMethod }}.</p>
+        <p class="order-status">Status: {{ order.status }}</p>
+        <button (click)="deleteOrder(order.orderId)">Delete order</button>
+      </div>
     </div>
   </div>
 </div>

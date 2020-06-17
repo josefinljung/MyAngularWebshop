@@ -34,7 +34,6 @@ export class CartComponent implements OnInit {
 
   decrease(item) {
     this.cartItems = this.cartService.decreaseItems(item);
-    console.log(item.quantity);
     this.cartTotal = this.cartService.totalPrice;
     console.log(this.cartService.totalPrice);
   }

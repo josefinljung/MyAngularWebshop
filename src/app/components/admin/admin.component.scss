@@ -1,10 +1,31 @@
-button {
+h1 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.order-container {
+  padding-bottom: 10px;
+  border-top: 1px solid black;
+
+  .order-date {
+    font-size: 1.2rem;
+  }
+
+  .order-status {
+    font-size: 0.8rem;
+  }
+
+  button {
     background-color: lightcoral;
     border: none;
     border-radius: 2px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.384);
-    margin-left: 6px;
     padding: 4px;
     font-weight: 600;
     font-size: 0.9rem;
+    }
+
+    button:hover {
+      background-color: rgb(199, 83, 83);
+    }
 }

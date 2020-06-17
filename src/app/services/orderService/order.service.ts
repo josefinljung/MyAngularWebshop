@@ -35,7 +35,7 @@ export class OrderService implements IOrder {
 
   createOrder(order: Order) {
     this.http.post('https://medieinstitutet-wie-products.azurewebsites.net/api/orders', {
-      companyId: 666,
+      companyId: 1732,
       created: order.created,
       createdBy: order.createdBy,
       paymentMethod: order.paymentMethod,
