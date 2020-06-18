@@ -37,5 +37,4 @@ export class CartComponent implements OnInit {
     this.cartTotal = this.cartService.totalPrice;
     console.log(this.cartService.totalPrice);
   }
-
 }

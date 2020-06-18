@@ -12,15 +12,15 @@ export class MoviesComponent implements OnInit {
 
   movies: Movie[] = [];
 
+  constructor(
+    private service: MovieService,
+    private cartService: CartService,
+  ) { }
+
   addToCart(m){
     this.cartService.addToCart(m);
     window.alert('Your movie of choice has been added to the cart!');
   }
-
-  constructor(
-    private service: MovieService,
-    private cartService: CartService,
-    ) { }
 
   ngOnInit(): void {
     this.service.movies.subscribe((data: Movie[]) => {

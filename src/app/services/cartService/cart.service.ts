@@ -14,6 +14,7 @@ export class CartService implements ICart {
   cartSource = new Subject<Cart[]>();
   totalList = [];
   totalPrice: number = 0;
+
   constructor() { }
 
   addToCart(movie: Movie) {
@@ -43,7 +44,6 @@ export class CartService implements ICart {
     this.totalSum();
     return this.cartList;
   }
-
 
   decreaseItems(item: Cart) {
     this.movieInCart = item;
