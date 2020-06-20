@@ -8,10 +8,71 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should render landing page and compare greeting message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('webshop app is running!');
+    expect(page.getHome()).toEqual('Hi there! Feel like watching a movie?');
   });
+
+
+  it('should render movies page and count amount of movies', () => {
+    page.navigateTo();
+    const menu = page.getMoviesNavbar();
+    menu.click();
+    expect(page.getMovies()).toBeGreaterThan(16);
+  });
+
+
+  it('should add item to cart and proceed to cart', () => {
+    page.navigateTo();
+    const menu = page.getMoviesNavbar();
+    menu.click();
+    const add = page.getAddMovieButton();
+    add.click();
+    const cart = page.getAddToCart();
+    cart.click();
+    const checkout = page.getPressCheckOut();
+    checkout.click();
+    expect(page.getCheckoutForm()).toBeTruthy();
+
+    // FORTSÄTT MED ATT FYLLA I FORUMLÄR OCH
+    // KLICKA PÅ PLACE ORDER SEN ADMIN
+    // OCH SE ATT LISTAN DÄR INTE ÄR TOM TYP?
+
+
+  });
+
+
+
+
+  // DET GAMLA SOM FUNGERADE
+  // it('should add item to cart and proceed to cart', () => {
+  //   page.navigateTo();
+  //   const menu = page.getMoviesNavbar();
+  //   menu.click();
+  //   const add = page.getAddMovieButton();
+  //   add.click();
+  //   const cart = page.getAddToCart();
+  //   cart.click();
+  //   expect(page.getViewCart()).toBeTruthy();
+  // });
+
+
+  // it('should checkout, fill out form and press place order.', () => {
+  //   page.navigateTo();
+  //   const menu = page.pageMenu();
+  //   menu.click();
+  //   const add = page.getAddMovieButton();
+  //   add.click();
+  //   const cart = page.getAddToCart();
+  //   cart.click();
+  //   expect(page.getViewCart()).toBeTruthy();
+  // });
+
+
+
+
+
+
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser

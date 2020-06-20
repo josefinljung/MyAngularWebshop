@@ -5,7 +5,44 @@ export class AppPage {
     return browser.get(browser.baseUrl) as Promise<unknown>;
   }
 
-  getTitleText(): Promise<string> {
-    return element(by.css('app-root .content span')).getText() as Promise<string>;
+  getHome(): Promise<string> {
+    return element(by.className('message-span')).getText() as Promise<string>;
   }
+
+  getMoviesNavbar() {
+    return element(by.id('movies-nav'));
+  }
+
+  getMovies(): Promise<number> {
+    return element.all(by.className('movie-container')).count() as Promise<number>;
+  }
+
+  getAddMovieButton() {
+    return element(by.className('add-btn'));
+  }
+
+  getAddToCart() {
+    return element(by.id('cart-nav'));
+  }
+
+  getViewCart() {
+    return element.all(by.className('cart-container'));
+  }
+
+  getPressCheckOut() {
+    return element(by.className('checkout-btn'));
+  }
+  getCheckoutForm(){
+    return element(by.className('name'));
+  }
+
+
+
+
+
+
+
+
+
+
 }

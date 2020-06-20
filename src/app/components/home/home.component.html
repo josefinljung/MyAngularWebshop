@@ -2,10 +2,13 @@
 
   <span class="message-span">
     <a routerLink="movies">
-      Hi there! Feel like watching a movie?
+      our selection for the month of june
     </a>
   </span>
 
+  <span *ngFor="let m of movies">
+    <img src="{{m.ImageUrl}}"/>
+  </span>
   <span *ngFor="let m of movies">
     <img src="{{m.ImageUrl}}"/>
   </span>

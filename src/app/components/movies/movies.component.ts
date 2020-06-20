@@ -20,6 +20,7 @@ export class MoviesComponent implements OnInit {
   addToCart(m){
     this.cartService.addToCart(m);
     window.alert('Your movie of choice has been added to the cart!');
+    // window alert makes my e2e test fail.
   }
 
   ngOnInit(): void {

@@ -16,7 +16,7 @@ export class CheckoutComponent implements OnInit {
   orderList: Order[] = [];
 
   orderForm = this.fb.group({
-    customerName: ['', [Validators.required, Validators.minLength(3)]],
+    customerName: ['', [Validators.required, Validators.minLength(2)]],
     customerEmail: ['', [Validators.required, Validators.email]],
     customerPayment: ['', Validators.required]
   });
@@ -44,6 +44,10 @@ export class CheckoutComponent implements OnInit {
 
   placeOrder() {
 
+    window.alert('Prepare the popcorns, your movies are on their way!');
+    // window alert makes my e2e test fail.
+
+
     const customerDetails = this.orderForm.value;
     const orderDate = new Date();
     const newOrder = {
@@ -57,14 +61,14 @@ export class CheckoutComponent implements OnInit {
     };
 
     const detailsProducts = this.cartItems.map((movie) => {
-      return {productId: movie.Id, name: movie.Name, amount: movie.quantity, orderId: 22 };
+      return {productId: movie.Id, name: movie.Name, amount: movie.quantity, orderId: 101 };
     });
 
     detailsProducts.forEach((orderedProduct) => {
       newOrder.products.push(orderedProduct);
     });
 
-    console.log(newOrder);
+
     this.order.createOrder(newOrder);
   }
 }
