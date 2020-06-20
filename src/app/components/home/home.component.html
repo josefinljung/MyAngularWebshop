@@ -1,11 +1,9 @@
 <div class="main-container">
-
   <span class="message-span">
     <a routerLink="movies">
       our selection for the month of june
     </a>
   </span>
-
   <span *ngFor="let m of movies">
     <img src="{{m.ImageUrl}}"/>
   </span>

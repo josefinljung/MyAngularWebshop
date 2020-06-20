@@ -19,15 +19,11 @@ export class AdminComponent implements OnInit {
       this.orderList = movie;
     });
     this.orderService.showOrders();
-
   }
 
   deleteOrder(orderId: number) {
     this.orderService.removeOrder(orderId).subscribe(() => {
       this.orderService.showOrders();
     });
-
   }
-
-
 }

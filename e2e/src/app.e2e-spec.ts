@@ -13,14 +13,12 @@ describe('workspace-project App', () => {
     expect(page.getHome()).toEqual('Hi there! Feel like watching a movie?');
   });
 
-
   it('should render movies page and count amount of movies', () => {
     page.navigateTo();
     const menu = page.getMoviesNavbar();
     menu.click();
     expect(page.getMovies()).toBeGreaterThan(16);
   });
-
 
   it('should add item to cart and proceed to cart', () => {
     page.navigateTo();
@@ -32,47 +30,14 @@ describe('workspace-project App', () => {
     cart.click();
     const checkout = page.getPressCheckOut();
     checkout.click();
-    expect(page.getCheckoutForm()).toBeTruthy();
+    expect(page.getCheckoutForm()).toEqual('Name:');
 
     // FORTSÄTT MED ATT FYLLA I FORUMLÄR OCH
     // KLICKA PÅ PLACE ORDER SEN ADMIN
-    // OCH SE ATT LISTAN DÄR INTE ÄR TOM TYP?
+    // OCH SE ATT LISTAN DÄR INTE ÄR TOM.
 
 
   });
-
-
-
-
-  // DET GAMLA SOM FUNGERADE
-  // it('should add item to cart and proceed to cart', () => {
-  //   page.navigateTo();
-  //   const menu = page.getMoviesNavbar();
-  //   menu.click();
-  //   const add = page.getAddMovieButton();
-  //   add.click();
-  //   const cart = page.getAddToCart();
-  //   cart.click();
-  //   expect(page.getViewCart()).toBeTruthy();
-  // });
-
-
-  // it('should checkout, fill out form and press place order.', () => {
-  //   page.navigateTo();
-  //   const menu = page.pageMenu();
-  //   menu.click();
-  //   const add = page.getAddMovieButton();
-  //   add.click();
-  //   const cart = page.getAddToCart();
-  //   cart.click();
-  //   expect(page.getViewCart()).toBeTruthy();
-  // });
-
-
-
-
-
-
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser

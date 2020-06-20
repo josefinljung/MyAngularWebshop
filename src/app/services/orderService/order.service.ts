@@ -43,7 +43,6 @@ export class OrderService implements IOrder {
       status: order.status,
       orderRows: order.products,
   }).subscribe((orderData) => {
-      console.log(orderData)
     });
   }
 

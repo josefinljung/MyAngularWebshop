@@ -12,22 +12,23 @@
     font-size: 5vw;
     z-index: 200;
 
-  a {
-    text-decoration: none;
-    letter-spacing: 2px;
-    color: rgb(17, 116, 111);
-    transition: all .3s ease-in-out;
-  }
+    a {
+      text-decoration: none;
+      letter-spacing: 2px;
+      color: rgb(17, 116, 111);
+      transition: all .3s ease-in-out;
+    }
+
     a:hover {
       color: rgb(131, 204, 200);
       }
-
-    }
   }
+}
 
-  span {
-    img {
-    width: 3.7%;
-    filter: opacity(15%);
-    }
+span {
+
+  img {
+  width: 3.7%;
+  filter: opacity(15%);
   }
+}

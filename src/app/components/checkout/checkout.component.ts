@@ -21,7 +21,6 @@ export class CheckoutComponent implements OnInit {
     customerPayment: ['', Validators.required]
   });
 
-
   constructor(
     private fb: FormBuilder,
     private cart: CartService,
@@ -47,7 +46,6 @@ export class CheckoutComponent implements OnInit {
     window.alert('Prepare the popcorns, your movies are on their way!');
     // window alert makes my e2e test fail.
 
-
     const customerDetails = this.orderForm.value;
     const orderDate = new Date();
     const newOrder = {
@@ -67,7 +65,6 @@ export class CheckoutComponent implements OnInit {
     detailsProducts.forEach((orderedProduct) => {
       newOrder.products.push(orderedProduct);
     });
-
 
     this.order.createOrder(newOrder);
   }

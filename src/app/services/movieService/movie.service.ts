@@ -7,6 +7,7 @@ import { IMovie } from './IMovie';
 @Injectable({
   providedIn: 'root'
 })
+
 export class MovieService implements IMovie {
 
   movies = new Subject<Movie[]>();
@@ -30,10 +31,7 @@ export class MovieService implements IMovie {
         return movieObject;
       });
 
-
       this.movies.next(moviesFromApi);
-
     });
   }
-
 }

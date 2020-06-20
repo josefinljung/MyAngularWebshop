@@ -18,7 +18,7 @@
 
   a:hover {
     color: rgb(131, 204, 200);
-    }
+  }
 }
 
 .cart-container {
@@ -59,9 +59,9 @@
         font-size: 0.9rem;
       }
 
-      .edit-btn:hover{
-        background-color: rgb(199, 83, 83);
-      }
+        .edit-btn:hover{
+          background-color: rgb(199, 83, 83);
+        }
     }
   }
 
@@ -72,7 +72,7 @@
   }
 }
 
-.test {
+.sum-btn-div {
   text-align: right;
 
 .total-sum {
@@ -91,6 +91,7 @@
   font-size: 1.2rem;
   margin: 5% 10% 0% 0%;
   }
+
   .checkout-btn:hover{
     background-color:  rgb(74, 109, 107);
   }
